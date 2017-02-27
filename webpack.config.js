@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 module.exports = {
@@ -12,7 +13,10 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, './dist/assets'),
-    publicPath: '/assets'
+    publicPath: '/assets',
+
+    // library: 'myClassName'
+    // - will attach your bundle to a window.myClassName instance, so using that name scope, you could call methods available to that entry point.
   },
 
   devServer: {
@@ -26,5 +30,50 @@ module.exports = {
       filename: 'commons.js',
       minChunks: 2,  // modules that get loaded 2 or more times will bundle into common.js
     }),
+
+    new ExtractTextPlugin({
+      filename: '[name].bundle.css',
+      allChunks: true
+    })
   ],
+
+  module: {
+    rules: [
+      // Babel + ES6
+      // $ yarn add --dev babel-loader babel-core babel-preset-es2015
+      // {
+      //   test: /\.js$/,
+      //   exclude: [/node_modules/],
+      //   use: [{
+      //     loader: 'babel-loader',
+      //     options: { presets: ['es2015'] }
+      //   }]
+      // },
+
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          // css module loader ( only scoped to local component )
+          {
+            loader: 'css-loader',
+            options: { modules: true }
+          }
+        ]
+      },
+
+      // sass
+      {
+        test: /\.(sass|scss)$/,
+        loader: ExtractTextPlugin.extract({
+          loader: 'css-loader!sass-loader?importLoaders=1'
+        })
+      }
+    ]
+  },
+
+  // give webpack a better understanding of intended module order
+  resolve: {
+    modules: [path.resolve(__dirname, './src'), 'node_modules']
+  },
 }
