@@ -1,6 +1,9 @@
+const webpackConfig = require('./webpack.config.test.js');
+
 // Karma configuration
 module.exports = function(config) {
   config.set({
+    basePath: '',
     frameworks: ['jasmine'],
 
     // ... normal karma configuration
@@ -23,13 +26,17 @@ module.exports = function(config) {
       // webpack watches dependencies
 
       // webpack configuration
+      resolve: webpackConfig.resolve,
+      module: webpackConfig.module,
+      externals: { window: 'window' },
       devtool: 'inline-source-map'
     },
 
     webpackMiddleware: {
       // webpack-dev-middleware configuration
       // i. e.
-      stats: 'errors-only'
+      noInfo: true,
+      stats: { colors: true }
     },
 
     autoWatch: true,
