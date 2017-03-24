@@ -6,9 +6,8 @@ module.exports = function(config) {
     basePath: '',
     frameworks: ['jasmine'],
 
-    // ... normal karma configuration
     files: [
-      // all files ending in "_spec"
+      {pattern: 'spec/spec_helper.js', watched: false},
       {pattern: 'spec/*_spec.js', watched: false},
       {pattern: 'spec/**/*_spec.js', watched: false}
       // each file acts as entry point for the webpack configuration
@@ -16,6 +15,7 @@ module.exports = function(config) {
 
     preprocessors: {
       // add webpack as preprocessor
+      'spec/*_helper.js': ['webpack', 'sourcemap'],
       'spec/*_spec.js': ['webpack', 'sourcemap'],
       'spec/**/*_spec.js': ['webpack', 'sourcemap']
     },
@@ -41,13 +41,24 @@ module.exports = function(config) {
 
     autoWatch: true,
     singleRun: false,
-    browsers: ['PhantomJS'],
+    browsers: [
+      // 'PhantomJS', // wait for phantomjs2.5, which contain subclassing array
+      'Chrome'
+    ],
 
     plugins: [
       'karma-phantomjs-launcher',
+      'karma-chrome-launcher',
       'karma-sourcemap-loader',
       'karma-webpack',
       'karma-jasmine'
-    ]
+    ],
+
+    logLevel: [
+      config.LOG_INFO
+    ],
+
+    port: 9877,
+    browserNoActivityTimeout: 100 * 1000
   });
 };

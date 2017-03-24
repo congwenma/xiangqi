@@ -1,4 +1,5 @@
 var config = require('./webpack.config.js');
+// just for karma
 Object.assign(config, {
   debug: true,
   devtool: 'source-map'
@@ -16,7 +17,16 @@ config.module.rules.push({
   exclude: [/node_modules/],
   use: [{
     loader: 'babel-loader',
-    options: { presets: ['es2015'] }
+    options: {
+      presets: ['es2015'],
+      plugins: [
+        [
+          "babel-plugin-transform-builtin-extend", {
+            globals: ["Error", "Array"]
+          }
+        ]
+      ]
+    }
   }]
 })
 

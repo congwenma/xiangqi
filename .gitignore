@@ -2,6 +2,9 @@
 dist/
 build/
 
+# ctags
+tags
+
 # Logs
 logs
 *.log

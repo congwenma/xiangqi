@@ -1,13 +1,48 @@
-var rightNow = Date.now()
-console.log(rightNow)
-import './style.scss'
+// Chess game starts here
 
-const obj = {
-  a: 1,
-  b: 2,
-  c: 3,
-  d: 4
-}
+import Avatars, {
+  Cannon,
+  Chariot,
+  General,
+  Guard,
+  Knight,
+  Minister,
+  Pawn
+} from './models/Avatar';
 
-const { a, b, c, d } = obj
-console.log("FOUR VARIABLES:", a,b,c,d)
+
+
+console.log(General)
+
+// open up server here to provide end points that take in current game status,
+// proposal:
+
+// {
+//   red_pieces: [
+//     {
+//       id: 'Chariot1',
+//       deceased: true,
+//       position: null
+//     },
+//     { id: 'Knight1'
+//       deceased: false,
+//       position: [1,2]
+//     }
+//   ],
+
+//   black_pieces: [
+//   ]
+// }
+
+
+// response:
+
+// {
+//   move: {
+//     id: 'Knight1',
+//     to: [2, 4],
+//      // other info
+//     from: [1,2],
+//     score: 123
+//   }
+// }

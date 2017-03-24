@@ -1,0 +1,14 @@
+@startuml
+:**XiangqiSearcher**;
+:build tree;
+repeat
+  :build child;
+repeat while (has children?)
+end
+:calculate depth;
+:alpha beta prune #search;
+:execute best move;
+
+
+
+@enduml
