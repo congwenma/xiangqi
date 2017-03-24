@@ -1,0 +1,9 @@
+/* Mixins */
+.kaiti {
+  font-family: KaiTi, FangSong, SimHei, SimSun; }
+
+.inline {
+  display: inline-block; }
+
+.block {
+  display: block; }
