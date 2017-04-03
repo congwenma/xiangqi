@@ -1,0 +1,91 @@
+@import './Global.scss';
+
+/* Base Application Styles */
+body {
+  color: #000;
+  background-color: #515151;
+}
+
+.index img {
+  margin: 40px auto;
+  border-radius: 4px;
+  background: #fff;
+  display: block;
+}
+
+.index .notice {
+  margin: 20px auto;
+  padding: 15px 0;
+  text-align: center;
+  border: 1px solid #000;
+  border-width: 1px 0;
+  background: #666;
+}
+
+/* Board Related */
+svg.chessboard {
+  // border: 1px solid #555;
+  cursor: default;
+}
+
+g.frontlines {
+  pointer-events: none;
+  path {stroke: $red; }
+}
+
+text.kaiti, g.kaiti{
+  @include user-cant-select();
+  @extend .kaiti;
+  color: #dd4444;
+  font-size: 30px;
+}
+
+g.river{
+  text {
+    fill: #dd4444;
+  }
+}
+/* end of Board Related */
+
+div.timer {
+  padding-bottom: 20px;
+  button{
+    border-radius: 20px;
+    pointer-events: none;
+    font-size: 26px;
+    padding: 0 20px;
+  }
+}
+
+
+.menu {
+  vertical-align: top;
+  width: 150px;
+
+  .toggler {
+  }
+
+  .activePlayer p.output{
+    text-align: center;
+    background: navajowhite;
+  }
+
+  .menu-options {
+  }
+
+  p.lbl {
+    text-align: center;
+    width: 100%;
+    margin: 20px 0;
+    padding: 7px;
+    background: rgb(254,204,177); /* Old browsers */
+    color: black;
+  }
+
+  button{
+    width: 100%;
+    margin: 10px 0;
+    padding: 7px;
+    letter-spacing: 2px;
+  }
+}

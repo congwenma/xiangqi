@@ -27,27 +27,27 @@ function getKillOptions(...args) {
   return getPotentialOptions(...args).filter(hasAvatarEnemyOf(faction))//.concat(this.getFlyingGeneralOption)
 }
 
-function getFlyingGeneralOption() {
-  let col = matrix.col(this.x);
-  let dissection = tools.dissect(col, this.currentY, this.currentY + 1);
-  let top = dissection[0].reverse();
-  let bottom = dissection[2];
-
-  if (this.avatar.belongsToTopFaction) {
-    return bottom.filter((coord)=> {
-      return coord.avatar;
-    }).slice(0, 1).filter(function (coord) {
-      return coord.avatar instanceof General;
-    });
-  }
-  else {
-    return top.filter((coord)=> {
-      return coord.avatar;
-    }).slice(0, 1).filter(function (coord) {
-      return coord.avatar instanceof General;
-    });
-  }
-}
+// function getFlyingGeneralOption() {
+//   let col = matrix.col(this.x);
+//   let dissection = tools.dissect(col, this.currentY, this.currentY + 1);
+//   let top = dissection[0].reverse();
+//   let bottom = dissection[2];
+//
+//   if (this.avatar.belongsToTopFaction) {
+//     return bottom.filter((coord)=> {
+//       return coord.avatar;
+//     }).slice(0, 1).filter(function (coord) {
+//       return coord.avatar instanceof General;
+//     });
+//   }
+//   else {
+//     return top.filter((coord)=> {
+//       return coord.avatar;
+//     }).slice(0, 1).filter(function (coord) {
+//       return coord.avatar instanceof General;
+//     });
+//   }
+// }
 
 /* Prevents a Flying general from ever taking place*/
 function filterFaceToFace(board, faction) {
@@ -60,7 +60,8 @@ function filterFaceToFace(board, faction) {
 
     var candidates = faction === 'black' ? bottomPieces : topPieces;
     var nextPiece = candidates.find(coord => coord.avatar);
-    return !(nextPiece && (nextPiece.avatar instanceof General));
+    return !(nextPiece && (nextPiece.avatar instanceof General &&
+      nextPiece.avatar.faction !== faction));
   }
 }
 
