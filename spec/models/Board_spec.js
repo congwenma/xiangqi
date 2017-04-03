@@ -71,6 +71,7 @@ describe('Board', () => {
   })
 
   describe('#movePiece', () => {
+    beforeAll(() => board = new Board)
     afterAll(() => board = new Board) //reset
 
     it('moves the piece onto its new specified position, return the fallen enemy unit', () => {

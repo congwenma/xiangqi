@@ -62,7 +62,6 @@ export default class SearchModel {
     }
 
     benchmarker.end()
-    console.log(benchmarker.result)
 
     return best
   }

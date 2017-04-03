@@ -69,3 +69,14 @@ Black: min player, constructs the max min trees, needs to finds the lowest numbe
   - construct a node for each variation of the board for 2 depth: `Min - (44x)Max - (44x)Leaf`
   - evaluate all `Leaf` values
 2. Run search and pass the value decisions up the tree
+
+
+
+# X, Y mappings
+red
+ |
+black
+
+black - red
+
+

@@ -133,7 +133,7 @@ export class XiangQiSearcher {
     var depth = 2
     if (piecesLen < 28)
       depth = 3
-    if (piecesLen < 16)
+    if (piecesLen < 12)
       depth = 4
     if (piecesLen < 6)
       depth = 5

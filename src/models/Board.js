@@ -96,7 +96,7 @@ export default class Board extends Matrix{
   }
 
   static read(singleCharRows) {
-    var pieces = singleCharRows.reverse().map((xRow, x) => {
+    var pieces = singleCharRows.map((xRow, x) => {
       return xRow.split(' ').map((char, y) => {
         var avatarClass = AvatarDictionary.get(char.toUpperCase())
         if (avatarClass) {

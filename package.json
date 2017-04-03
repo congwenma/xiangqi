@@ -4,6 +4,11 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "bootstrap-css-only": "^3.3.6",
+    "moment": "^2.18.1",
+    "normalize.css": "^3.0.3",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
     "surgeonkit": "0.0.7"
   },
   "devDependencies": {
@@ -20,15 +25,24 @@
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "2.0.1",
-    "node-sass": "^4.5.0",
+    "node-sass": "^4.5.1",
+    "npm-run-all": "^4.0.2",
     "phantomjs-prebuilt": "^2.1.14",
+    "react-scripts": "0.9.5",
     "sass-loader": "^6.0.2",
     "style-loader": "^0.13.2",
     "webpack": "^2.2.1",
     "webpack-dev-server": "2"
   },
   "scripts": {
-    "test": "node_modules/karma/bin/karma start karma.conf.js"
+    "gametest": "node_modules/karma/bin/karma start karma.conf.js",
+    "build-css": "node-sass src/ -o src/",
+    "watch-css": "npm run build-css && node-sass src/ -o src/ --watch --recursive",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm run build-css && react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "keywords": [],
   "author": "Congwen Ma <congwen.ma@gmail.com>",

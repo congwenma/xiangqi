@@ -1,0 +1,29 @@
+/* Mixins */
+@mixin user-cant-select() {
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+}
+
+.kaiti {
+  font-family: KaiTi, FangSong, SimHei, SimSun;
+}
+
+$red: red;
+$redText: darken($red, 10%);
+$redHighlight: brown;
+$redIntersectionHighlight: lighten($red, 20%);
+
+$black: #222;
+$blackText: darken(white, 0);
+$blackHighlight: #555;
+$blackIntersectionHighlight: lighten($black, 20%);
+
+$intersectionHighlight: rgb(200, 150, 100);
+
+.inline {
+  display: inline-block;
+}
+.block {
+  display: block;
+}

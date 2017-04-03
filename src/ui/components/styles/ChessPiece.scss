@@ -1,0 +1,70 @@
+@import './Global.scss';
+
+g.chess-piece {
+  fill: #DAC298;
+  font-size: 20px;
+  cursor: -webkit-grab;
+
+  &.red {
+    text {
+      stroke: $redText;
+      fill: $redText;
+    }
+    &.selected {
+      text { stroke: $redHighlight; stroke-width: 2;}
+      stroke: $redHighlight;
+    }
+    stroke: $red;
+  }
+  &.black {
+    fill: $black;
+    stroke: white;
+    text {
+      stroke: $blackText;
+    }
+    &.selected {
+      text: {stroke: $blackHighlight; stroke-width: 2;}
+      stroke: $blackHighlight;
+    }
+  }
+  &.selected {
+    circle.piece-outline {
+      stroke-width: 3;
+    }
+    circle.piece-inline {
+      stroke-width: 3;
+    }
+  }
+
+  &.haloed{
+    &:hover { opacity: 0.7; }
+    circle.piece-halo {
+      opacity: 0.3;
+      display: block;
+    }
+  }
+
+  circle.piece-block {
+    fill-opacity: 1;
+    stroke-width: 1;
+  }
+  circle.piece-inline {
+    fill-opacity: 0;
+    stroke-width: 2;
+  }
+  circle.piece-outline {
+    stroke-width: 1;
+  }
+  circle.piece-halo {
+    display: none;
+  }
+
+
+  text {
+    @include user-cant-select();
+    @extend .kaiti;
+    color: #dd4444;
+    font-size: 21px;
+  }
+}
+
