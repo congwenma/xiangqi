@@ -8,6 +8,8 @@ import Timer from './widgets/Timer';
 import Toggler from './commons/Toggler'
 // import TransformersApp from './experiments/TransformersApp';
 
+import AnalyzeLoader from './widgets/AnalyzeLoader'
+
 const Thinker = player =>
   <div style={{
     height: 37,
@@ -49,23 +51,16 @@ class AppComponent extends React.Component {
               style={{ position: 'relative' }}
             >
               {this.chessgame.activePlayer.faction === 'red' ? 'Player' : 'Computer'}
-              <div style={{
-                height: 37,
-                width: 25,
-                position: 'absolute',
-                top: 5,
-                background: "url(images/thinker.gif) no-repeat fixed",
-                backgroundSize: '10%',
-                backgroundPosition: '780px 125px',
-                opacity: this.chessgame.activePlayer.faction === 'black' ? 1 : 0
-              }}/>
+              <AnalyzeLoader
+                toShow={this.chessgame.activePlayer.faction === 'black'}
+              />
             </div>
           </div>
 
           <Timer stat={this.chessgame.stat}/>
 
           <div>
-            <button className="btn btn-warning" onClick={this.chessgame.reset.bind(this.chessgame, this)}>Reset</button>
+            <button className="btn btn-success" onClick={this.chessgame.reset.bind(this.chessgame, this)}>Reset</button>
           <button className="btn" onClick={()=> {}}>Undo</button>
           </div>
         </div>

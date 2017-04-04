@@ -1,0 +1,44 @@
+$n_of_blocks: 6;
+$interval: 0.5 / $n_of_blocks;
+
+.analyze-loader{
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  position: relative;
+  margin: 0 auto;
+  top: 20px;
+
+  span{
+    display: inline-block;
+    width: 5px;
+    height: 20px;
+    background-color: #c88;
+    margin: 0 1px;
+  }
+  &.thinking{
+    span { background-color: #444; }
+
+    @for $s from 1 through $n_of_blocks {
+      span:nth-child(#{$s}) {
+        animation: grow 1s ease-in-out #{$interval*$s}s infinite;
+      }
+    }
+  }
+}
+
+@keyframes grow{
+  0%, 100%{
+    -webkit-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    -o-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+
+  50%{
+    -webkit-transform: scaleY(1.8);
+    -ms-transform: scaleY(1.8);
+    -o-transform: scaleY(1.8);
+    transform: scaleY(1.8);
+  }
+}

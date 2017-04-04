@@ -1,4 +1,5 @@
 .toggle .toggle_shape {
+  margin: auto;
   width: 50px;
   height: 16.66667px;
   display: block;
@@ -6,24 +7,27 @@
   border-radius: 16.66667px;
   background-color: rgba(0, 0, 0, 0.1);
   position: relative; }
-  .toggle .toggle_shape:after {
-    transition: 0.3s linear;
-    content: "";
-    width: 16.66667px;
-    height: 16.66667px;
-    display: block;
-    background-color: #fff;
-    border-radius: 50%;
-    box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.4);
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: 0.3s linear; }
+
+.toggle .toggle_shape:after {
+  transition: 0.3s linear;
+  content: "";
+  width: 16.66667px;
+  height: 16.66667px;
+  display: block;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.3s linear; }
 
 .toggle input[type="checkbox"] {
   display: none; }
-  .toggle input[type="checkbox"]:checked + .toggle_shape {
-    border-color: steelblue;
-    background-color: steelblue; }
-    .toggle input[type="checkbox"]:checked + .toggle_shape:after {
-      left: 33.33333px; }
+
+.toggle input[type="checkbox"]:checked + .toggle_shape {
+  border-color: steelblue;
+  background-color: steelblue; }
+
+.toggle input[type="checkbox"]:checked + .toggle_shape:after {
+  left: 33.33333px; }

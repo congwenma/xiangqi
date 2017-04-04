@@ -3,9 +3,9 @@
 g.chess-piece {
   fill: #DAC298;
   font-size: 20px;
-  cursor: -webkit-grab;
 
   &.red {
+    cursor: -webkit-grab;
     text {
       stroke: $redText;
       fill: $redText;
