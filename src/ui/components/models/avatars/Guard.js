@@ -8,6 +8,8 @@ export default class Guard extends Avatar {
     this.killMoveset = new CrossGuard(this);
   }
 
+  get constructorName() { return 'Guard' }
+
   get belongsToTopFaction() {
     return this.faction === 'black';
   }

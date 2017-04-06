@@ -11,6 +11,7 @@ describe('EvalModel', () => {
       var chariot = board[0][0].avatar
 
       expect(chariot.positionValue).toBe(-16)
+      expect(board[0][9].avatar.positionValue).toBe(-16)
     })
 
     it('can evaluate a Defensive Piece(Guard, Minister...)', () => {
@@ -41,8 +42,9 @@ describe('EvalModel', () => {
 
         // 12 for the moving out of  chariot
         // 4 for the bad position of knight's initial position, which was -4
+        // 100 for the loss of cannon
         expect(evalModel.eval(board, 'black')).toBe(
-          - (12 + 4) * 8
+          - ((12 + 4) * 8 + 100)
         )
 
         board = new Board //reset

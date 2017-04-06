@@ -42,7 +42,6 @@ describe('Guard', ()=> {
       var destination = board[4][1]
       target.placeOn({ x: 4, y: 1 })
 
-      debugger;
       expect(guard.killOptions).toContain(destination)
     })
   })

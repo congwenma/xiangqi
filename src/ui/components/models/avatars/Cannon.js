@@ -8,4 +8,6 @@ export default class Cannon extends Avatar {
     this.moveset = new Straight(this);
     this.killMoveset = new Bombard(this);
   }
+
+  get constructorName() { return 'Cannon' }
 }

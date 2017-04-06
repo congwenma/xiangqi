@@ -33,8 +33,9 @@ svg.chessboard {
 
 g.frontlines {
   pointer-events: none; }
-  g.frontlines path {
-    stroke: red; }
+
+g.frontlines path {
+  stroke: red; }
 
 text.kaiti, g.kaiti {
   -webkit-user-select: none;
@@ -52,28 +53,32 @@ g.river text {
 /* end of Board Related */
 div.timer {
   padding-bottom: 20px; }
-  div.timer button {
-    border-radius: 20px;
-    pointer-events: none;
-    font-size: 26px;
-    padding: 0 20px; }
+
+div.timer button {
+  border-radius: 20px;
+  pointer-events: none;
+  font-size: 26px;
+  padding: 0 20px; }
 
 .menu {
   vertical-align: top;
   width: 150px; }
-  .menu .activePlayer p.output {
-    text-align: center;
-    background: navajowhite; }
-  .menu p.lbl {
-    text-align: center;
-    width: 100%;
-    margin: 20px 0;
-    padding: 7px;
-    background: #feccb1;
-    /* Old browsers */
-    color: black; }
-  .menu button {
-    width: 100%;
-    margin: 10px 0;
-    padding: 7px;
-    letter-spacing: 2px; }
+
+.menu .activePlayer p.output {
+  text-align: center;
+  background: navajowhite; }
+
+.menu p.lbl {
+  text-align: center;
+  width: 100%;
+  margin: 20px 0;
+  padding: 7px;
+  background: #feccb1;
+  /* Old browsers */
+  color: black; }
+
+.menu button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 7px;
+  letter-spacing: 2px; }

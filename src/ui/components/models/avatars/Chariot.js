@@ -8,4 +8,6 @@ export default class Chariot extends Avatar {
     this.moveset = new Straight(this);
     this.killMoveset = new StraightKill(this);
   }
+
+  get constructorName() { return 'Chariot' }
 }

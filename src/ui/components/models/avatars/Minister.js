@@ -12,4 +12,5 @@ export default class Minister extends Avatar {
     return this.faction === 'black';
   }
 
+  get constructorName() { return 'Minister' }
 }

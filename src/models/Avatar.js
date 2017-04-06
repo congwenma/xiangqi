@@ -31,7 +31,7 @@ export default class Avatar {
     const char = AvatarInvertDictionary.get(this.constructor)
     return this.isRed ? char.toLowerCase() : char;
   }
-  
+
   died() { this.position = { x: -1, y: -1 } }
   get isAlive() {
     const { x, y } = this.position

@@ -35,7 +35,7 @@ class AppComponent extends React.Component {
         <div className="inline">
           <Chessboard chessgame = {this.chessgame} />
         </div>
-        <div className="inline menu">
+        <div className="inline menu" style={{ paddingTop: 30 }}>
           <Toggler className='inline'
             label="Graphic Avatars"
             model={this.chessgame.config}
@@ -61,7 +61,9 @@ class AppComponent extends React.Component {
 
           <div>
             <button className="btn btn-success" onClick={this.chessgame.reset.bind(this.chessgame, this)}>Reset</button>
-          <button className="btn" onClick={()=> {}}>Undo</button>
+            { false &&
+              <button className="btn" onClick={()=> {}}>Undo</button>
+            }
           </div>
         </div>
       </div>

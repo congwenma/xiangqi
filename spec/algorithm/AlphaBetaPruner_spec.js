@@ -25,6 +25,12 @@ describe('XiangQiSearch', () => {
       expect(result.content.move).toBeDefined()
     })
 
+    it('just curious what would this be', () => {
+      var s = searcher
+      console.warn(result.content.avatar.toSingle,
+      result.content.move.xy, result.value)
+    })
+
     it('returns a value', () => {
       expect(typeof result.value).toBe('number')
     })

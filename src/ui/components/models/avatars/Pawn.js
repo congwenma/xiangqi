@@ -20,4 +20,6 @@ export default class Pawn extends Avatar {
   get isTopFaction() {
     return this.faction === 'black';
   }
+
+  get constructorName() { return 'Pawn' }
 }

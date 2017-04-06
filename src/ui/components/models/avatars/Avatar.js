@@ -20,17 +20,19 @@ class Avatar {
     this.name = this.constructor.name;
   }
 
+  static get avatarsInfo() { return avatarsInfo }
+
   get getName() {
-    return avatarsInfo[this.faction][this.name]
+    return avatarsInfo[this.faction][this.constructorName]
   }
 
   get toSingle() {
-    var name = avatarsInfo.single[this.name] 
+    var name = avatarsInfo.single[this.constructorName]
     return this.faction === 'red' ? name.toLowerCase() : name
   }
 
   get getPictograph() {
-    return avatarsInfo.pictographs[this.faction][this.name]
+    return avatarsInfo.pictographs[this.faction][this.constructorName]
   }
 
   unselect() {

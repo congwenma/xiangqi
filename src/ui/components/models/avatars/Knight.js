@@ -7,4 +7,6 @@ export default class Knight extends Avatar {
     this.moveset = new SunFormation(this);
     this.killMoveset = new SunFormation(this);
   }
+
+  get constructorName() { return 'Knight' }
 }

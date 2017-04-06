@@ -51,13 +51,7 @@ export default class ChessGame{
 
   computerThink() {
     const { avatar, move } = new XiangQiSearcher({
-      board: Board.read(
-        this.coordinates.map(
-          xCol => xCol.map(
-            ({avatar}) => avatar ? avatar.toSingle : '.'
-          ).join(' ')
-        )
-      )
+      board: this.algorithmBoard
     }).compute().content
 
     // make the move, avatar -> move, // beautify this
@@ -71,6 +65,16 @@ export default class ChessGame{
     } else {
       this.selectMove(correctMove)
     }
+  }
+
+  get algorithmBoard () {
+    return Board.read(
+      this.coordinates.map(
+        xCol => xCol.map(
+          ({avatar}) => avatar ? avatar.toSingle : '.'
+        ).join(' ')
+      )
+    )
   }
 
   get getAvatars() {

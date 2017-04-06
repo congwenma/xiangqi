@@ -7,10 +7,10 @@ import Avatar, {
   Knight,
   Minister,
   Pawn
-} from './Avatar';
-
-import Matrix, { expand } from './Matrix';
+} from './Avatar'
+import Matrix, { expand } from './Matrix'
 import _ from 'lodash'
+import EvalModel from '../algorithm/EvalModel'
 
 const identity = id => id
 
@@ -188,10 +188,22 @@ export default class Board extends Matrix{
     return grid
   }
 
+  static get MAIN_PIECES() { return [Chariot, Knight, Cannon, Minister, Guard, General] }
+  static get ALPHA_PIECES() { return [Chariot, Knight, Cannon] }
+
   // Red is max player
-  allPossibleMoves(isMax) {
-    const pieces = this.alivePieces.filter(p => p.isRed === isMax)
-    return pieces.reduce(
+  allPossibleMoves(isMax, { isBeingChecked, optimize = true } = {}) {
+    let piecesToConsider = this.alivePieces.filter(p => p.isRed === isMax)
+
+    if (optimize) {
+      if (isBeingChecked) {
+        piecesToConsider = piecesToConsider.filter(p => Board.MAIN_PIECES.includes(p.constructor))
+      }
+      else if (piecesToConsider.length > 13) {
+        piecesToConsider = piecesToConsider.filter(p => Board.ALPHA_PIECES.includes(p.constructor))
+      }
+    }
+    return piecesToConsider.reduce(
       (acc, piece) => [...acc, ...piece.moves],
       []
     )
@@ -229,6 +241,10 @@ export default class Board extends Matrix{
     ].join('\n')
   }
 
+  eval() {
+    this.evalModel = this.evalModel || new EvalModel
+    return this.evalModel.eval(this, 'red')
+  }
 
   // Useless
 

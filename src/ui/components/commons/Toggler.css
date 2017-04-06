@@ -9,7 +9,6 @@
   position: relative; }
 
 .toggle .toggle_shape:after {
-  transition: 0.3s linear;
   content: "";
   width: 16.66667px;
   height: 16.66667px;

@@ -16,7 +16,6 @@ $height: $width/3;
      background-color: rgba(0, 0, 0, .1);
      position: relative;
      &:after{
-       transition: $transition;
        content: "";
        width: $height;
        height: $height;

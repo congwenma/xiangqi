@@ -8,19 +8,18 @@ class Toggler extends React.Component {
   }
 
   render() {
-    window.tog = this;
+    window.Toggler = this;
     let value = this.props.model[this.props.attr];
 
     return (
       <div className="toggler">
-
-
         <div className="panel panel-default">
           <div className="panel-heading">{this.props.label}</div>
           <div className="panel-body">
             <label className="toggle block">
               <input type="checkbox"
                 value={value}
+                defaultChecked={value}
                 onChange={this.handleChange.bind(this)}
               />
               <div className="toggle_shape"></div>

@@ -9,6 +9,8 @@ export default class General extends Avatar {
     this.killMoveset = new Proximity(this);
   }
 
+  get constructorName() { return 'General' }
+
   get belongsToTopFaction() {
     return this.faction === 'black';
   }

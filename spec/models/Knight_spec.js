@@ -42,7 +42,7 @@ describe('Knight', ()=> {
     it('should be able to kill an enemy avatar if its within move option', function () {
       var target = board[0][9].avatar;
       target.placeOn({ x: 0, y: 2 })
-      debugger;
+
       expect(knight.killOptions).toContain(board[0][2])
     })
   })

@@ -9,7 +9,7 @@ import Avatar, {
   Minister,
   Pawn
 } from './Avatar';
-
+import EvalModel from '../algorithm/EvalModel'
 
 const identity = id => id
 
@@ -160,6 +160,11 @@ export default function Board({ width = 9, height = 10, pieces } = {}) {
       ].join('\n')
     },
 
+    eval() {
+      this.evalModel = this.evalModel || new EvalModel
+      return this.evalModel.eval(this, 'red')
+    },
+
     _flushPieces() {
       this.pieces.map(piece => {
         const { x, y } = piece.position
@@ -259,4 +264,3 @@ Board.from = function (_2dArray) {
   )
   return inst
 }
-

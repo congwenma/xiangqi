@@ -118,7 +118,8 @@ export default class AlphaBetaPruner {
     return findMaxBy(this.root.children, child => child.value)
   }
 }
-var buildChildCount = 0
+
+var buildChildCount = 0 // small becnhmark TODO: capture this in a class, along with performance metrics
 
 const evalModel = new EvalModel
 
@@ -131,7 +132,7 @@ export class XiangQiSearcher {
   buildTree() {
     const { length: piecesLen } = this.board.alivePieces
     var depth = 2
-    if (piecesLen < 28)
+    if (piecesLen < 24)
       depth = 3
     if (piecesLen < 12)
       depth = 4
@@ -142,13 +143,14 @@ export class XiangQiSearcher {
     depth = depth - 1 // slow algorithm when building tree, need to optimize later
     let moves = this.board.allPossibleMoves(false)
     const isMax = false // initial player is black, computer plays black
+
     this.root = new TreeNode({
-      isMax,
-      children: moves.map(move => this.buildChild(move, depth, !isMax))
+      isMax, // defined initially as false
+      children: moves.map(move => this.buildChild(move, depth, isMax))
     })
   }
 
-  buildChild(move, depth, isMax) {
+  buildChild(move, depth, isMax, isBeingChecked) {
     // console.log(`calling buildChild ${buildChildCount++} times`)
     var result = { content: move }
     const { avatar, move: position } = move // TODO: remove this awkward rename
@@ -156,11 +158,16 @@ export class XiangQiSearcher {
     const { position: originPosition } = avatar
 
     let eaten = this.board.movePiece(avatar, position)
-    let moves = this.board.allPossibleMoves(!isMax) // opponent's moves, so !isMax
+    let moves = this.board.allPossibleMoves(!isMax, { isBeingChecked: isBeingChecked }) // opponent's moves, so !isMax
 
     // compute result
     if (depth !== 0 && this.board.checkForVictory === 'x') {
-      result.children = moves.map(move => this.buildChild(move, depth-1, !isMax))
+      const isChecking = moves.some(move => {
+        const avatar = this.board.at(move.move).avatar
+        return avatar && avatar.toSingle.toLowerCase() === 'b'
+      })
+
+      result.children = moves.map(move => this.buildChild(move, depth-1, !isMax, isChecking))
     } else {
       result.value = evalModel.eval(this.board, 'red')
     }

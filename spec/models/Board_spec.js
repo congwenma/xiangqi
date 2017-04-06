@@ -164,8 +164,36 @@ describe('Board', () => {
       // B 1
       // C 22
       // P 5
-      expect(board.allPossibleMoves(true).length).toBe(44)
-      expect(board.allPossibleMoves(false).length).toBe(44)
+      const optimize = false
+      expect(board.allPossibleMoves(true, { optimize }).length).toBe(44)
+      expect(board.allPossibleMoves(false, { optimize }).length).toBe(44)
+    })
+
+    describe('optimization', () => {
+      beforeEach(() => {
+        board = Board.read([
+          'R . . P . . p . . r',
+          'K . C . . . . . . k',
+          'M . . P . . p . . m',
+          'G . . . . . . . . g',
+          'B . . P . c p . . b',
+          'G . . . . . . . . g',
+          'M . . P . . p . . m',
+          'K . C . . . . c . k',  // [1, x]
+          'R . . P . . p . . r',  // [0, x]
+        ])
+      })
+
+      it('have less moves to consider when there are more pieces', () => {
+        // pawn, minister, guard, general
+        expect(board.allPossibleMoves(true).length).toBe(44-12)
+      })
+
+      describe('isBeingChecked', () => {
+        it('will consider defensive moves if other player is checking', () => {
+          expect(board.allPossibleMoves(true, { depth: 4, isBeingChecked: true }).length).toBe(44-5)
+        })
+      })
     })
   })
 

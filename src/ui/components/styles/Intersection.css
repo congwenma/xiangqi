@@ -11,14 +11,19 @@
 g.intersection {
   fill-opacity: 0;
   fill: #c89664; }
-  g.intersection.highlighted {
-    cursor: -webkit-grab;
-    fill-opacity: 0.5; }
-    g.intersection.highlighted.Coordinate_STATE__redHighlighted {
-      fill: #ff6666; }
-    g.intersection.highlighted.Coordinate_STATE__blackHighlighted {
-      fill: #555555; }
-  g.intersection.highlighted:hover {
-    fill-opacity: 0.7; }
-  g.intersection.occupied {
-    pointer-events: none; }
+
+g.intersection.highlighted {
+  cursor: -webkit-grab;
+  fill-opacity: 0.5; }
+
+g.intersection.highlighted.Coordinate_STATE__redHighlighted {
+  fill: #ff6666; }
+
+g.intersection.highlighted.Coordinate_STATE__blackHighlighted {
+  fill: #555555; }
+
+g.intersection.highlighted:hover {
+  fill-opacity: 0.7; }
+
+g.intersection.occupied {
+  pointer-events: none; }
