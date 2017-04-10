@@ -20,7 +20,7 @@ export default class Avatar {
   get moves() { return [...this.killOptions, ...this.moveOptions].map(move => ({ avatar: this, move }))}
 
   // smart getters
-  get name() { return this.constructor.name }
+  get name() { return AvatarConstructorDictionary.get(this.constructor) }
   // get position() { return this.coord ? this.coord.xy : {}}
   get coord() {
     const { x, y } = this.position
@@ -121,6 +121,18 @@ export class Pawn extends Avatar {
     }
   }
 }
+
+// look up constructor's name when file has been minified, and consturctor
+// names have been mutated
+export const AvatarConstructorDictionary = new Map([
+  [General, 'General'], // as in boss, lol!
+  [Chariot, 'Chariot'], // as in rook
+  [Cannon, 'Cannon'],
+  [Knight, 'Knight'],
+  [Minister, 'Minister'],
+  [Guard, 'Guard'],
+  [Pawn, 'Pawn'],
+])
 
 export const AvatarDictionary = new Map([
   ['B', General], // as in boss, lol!

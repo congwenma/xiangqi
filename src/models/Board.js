@@ -212,7 +212,7 @@ export default class Board extends Matrix{
     const { pieces } = this
     let generalsFaction = pieces
       .filter(p =>
-        p.constructor.name === 'General' && p.isAlive
+        p.name === 'General' && p.isAlive
       ).map(g => g.faction)
     if (!generalsFaction.includes('red')) {
       return 'black'

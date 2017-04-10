@@ -97,7 +97,7 @@ export default function Board({ width = 9, height = 10, pieces } = {}) {
           const { pieces } = this
           let generalsFaction = pieces
             .filter(p =>
-              p.constructor.name === 'General' && p.isAlive
+              p.name === 'General' && p.isAlive
             ).map(g => g.faction)
           if (!generalsFaction.includes('red')) {
             return 'black'
