@@ -24,6 +24,14 @@ $intersectionHighlight: rgb(200, 150, 100);
 .inline {
   display: inline-block;
 }
-.block {
-  display: block;
+
+// for wooden surface
+$board-color: lighten(#AF8169, 12%);
+.wooden{
+  background-color: lighten($board-color, 4);
+  background-image: linear-gradient(90deg, lighten($board-color, 7%) 50%, transparent 50%),
+  linear-gradient(90deg, lighten($board-color, 10%) 50%, transparent 50%),
+  linear-gradient(90deg, transparent 50%, lighten($board-color, 12%) 50%),
+  linear-gradient(90deg, transparent 50%, lighten($board-color, 13%) 50%);
+  background-size: 13px, 29px, 37px, 53px;
 }

@@ -5,25 +5,22 @@
 .inline {
   display: inline-block; }
 
-.block {
-  display: block; }
+.wooden {
+  background-color: #cbae9e;
+  background-image: linear-gradient(90deg, #d1b6a8 50%, transparent 50%), linear-gradient(90deg, #d6beb2 50%, transparent 50%), linear-gradient(90deg, transparent 50%, #dac4b9 50%), linear-gradient(90deg, transparent 50%, #dbc7bc 50%);
+  background-size: 13px, 29px, 37px, 53px; }
 
 g.intersection {
   fill-opacity: 0;
   fill: #c89664; }
-
-g.intersection.highlighted {
-  cursor: -webkit-grab;
-  fill-opacity: 0.5; }
-
-g.intersection.highlighted.Coordinate_STATE__redHighlighted {
-  fill: #ff6666; }
-
-g.intersection.highlighted.Coordinate_STATE__blackHighlighted {
-  fill: #555555; }
-
-g.intersection.highlighted:hover {
-  fill-opacity: 0.7; }
-
-g.intersection.occupied {
-  pointer-events: none; }
+  g.intersection.highlighted {
+    cursor: -webkit-grab;
+    fill-opacity: 0.5; }
+    g.intersection.highlighted.Coordinate_STATE__redHighlighted {
+      fill: #ff6666; }
+    g.intersection.highlighted.Coordinate_STATE__blackHighlighted {
+      fill: #555555; }
+  g.intersection.highlighted:hover {
+    fill-opacity: 0.7; }
+  g.intersection.occupied {
+    pointer-events: none; }

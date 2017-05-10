@@ -5,8 +5,10 @@
 .inline {
   display: inline-block; }
 
-.block {
-  display: block; }
+.wooden {
+  background-color: #cbae9e;
+  background-image: linear-gradient(90deg, #d1b6a8 50%, transparent 50%), linear-gradient(90deg, #d6beb2 50%, transparent 50%), linear-gradient(90deg, transparent 50%, #dac4b9 50%), linear-gradient(90deg, transparent 50%, #dbc7bc 50%);
+  background-size: 13px, 29px, 37px, 53px; }
 
 /* Base Application Styles */
 body {
@@ -33,9 +35,8 @@ svg.chessboard {
 
 g.frontlines {
   pointer-events: none; }
-
-g.frontlines path {
-  stroke: red; }
+  g.frontlines path {
+    stroke: red; }
 
 text.kaiti, g.kaiti {
   -webkit-user-select: none;
@@ -51,19 +52,6 @@ g.river text {
   fill: #dd4444; }
 
 /* end of Board Related */
-div.timer {
-  padding-bottom: 20px; }
-
-div.timer button {
-  border-radius: 20px;
-  pointer-events: none;
-  font-size: 26px;
-  padding: 0 20px; }
-
-.menu {
-  vertical-align: top;
-  width: 150px; }
-
 .menu .activePlayer p.output {
   text-align: center;
   background: navajowhite; }
@@ -82,3 +70,26 @@ div.timer button {
   margin: 10px 0;
   padding: 7px;
   letter-spacing: 2px; }
+
+.Main {
+  transition: padding 0.3s ease; }
+  .Main.is-open {
+    padding-left: 200px; }
+
+.align-left {
+  text-align: left; }
+
+.align-right {
+  text-align: right; }
+
+.z0 {
+  z-index: 0; }
+
+.zmin {
+  z-index: 1; }
+
+.zmid {
+  z-index: 5000; }
+
+.zmax {
+  z-index: 9999; }

@@ -1,20 +1,19 @@
 .analyze-loader {
   width: 50px;
-  height: 50px;
+  height: 30px;
   border-radius: 100%;
   position: relative;
-  margin: 0 auto;
-  top: 20px; }
+  margin: 0 auto; }
 
 .analyze-loader span {
   display: inline-block;
-  width: 5px;
-  height: 20px;
+  width: 7px;
+  height: 30px;
   background-color: #c88;
   margin: 0 1px; }
 
 .analyze-loader.thinking span {
-  background-color: #444; }
+  background-color: #0097a7; }
 
 .analyze-loader.thinking span:nth-child(1) {
   animation: grow 1s ease-in-out 0.08333s infinite; }
