@@ -47,24 +47,7 @@ g.river{
 }
 /* end of Board Related */
 
-div.timer {
-  padding-bottom: 20px;
-  button{
-    border-radius: 20px;
-    pointer-events: none;
-    font-size: 26px;
-    padding: 0 20px;
-  }
-}
-
-
 .menu {
-  vertical-align: top;
-  width: 150px;
-
-  .toggler {
-  }
-
   .activePlayer p.output{
     text-align: center;
     background: navajowhite;
@@ -89,3 +72,20 @@ div.timer {
     letter-spacing: 2px;
   }
 }
+
+.Main {
+  transition: padding 0.3s ease;
+  &.is-open {
+    padding-left: 200px;
+  }
+
+}
+
+// utility
+.align-left { text-align: left; }
+.align-right { text-align: right; }
+
+.z0 { z-index: 0}
+.zmin { z-index: 1}
+.zmid { z-index: 5000}
+.zmax { z-index: 9999}

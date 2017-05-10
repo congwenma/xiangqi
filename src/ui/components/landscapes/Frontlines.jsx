@@ -11,11 +11,12 @@ let paths = [
   `M ${3*barracadeLength} -${barracadeLength} H ${barracadeLength} V -${3*barracadeLength}`
 ].join(' ');
 
-class Cross extends React.Component {
+class Crosshair extends React.Component {
   render () {
     return (
       <g transform={this.props.transform}>
-        <path d={paths} />
+        {/* using fillOpacity avoid causing corner colors in the crosshair*/}
+        <path d={paths} className="cross" fillOpacity="0.1"/>
       </g>
     )
   }
@@ -55,9 +56,11 @@ export default class Frontlines extends React.Component{
       <g className="frontlines" key="frontlines" stroke="#dd4444" fill="#fff" strokeWidth="1"
         transform={boardTranslation}
       >
-        {crosses.map((cross, index)=> {
-          return <Cross key={`cross-${index}`} transform={`translate(${cross.x * 50}, ${cross.y * 50})`} />
-        })}        
+        {crosses.map((cross, index) => 
+          <Crosshair key={`cross-${index}`} 
+            transform={`translate(${cross.x * 50}, ${cross.y * 50})`} 
+          />
+        )}        
       </g>
     )
   }

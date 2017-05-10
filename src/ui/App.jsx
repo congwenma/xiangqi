@@ -1,29 +1,41 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import Main from './components/main'
 import './App.css';
 import 'bootstrap-css-only'
 import './components/styles/BootstrapSiteWrapper.css'
 
-const Title = () =>
-  <div className="App-header">
-    <h1 className="kaiti inline"
-      style={{
-        border: '1px outset white',
-        padding: 5,
-        margin: '0 10px 0',
-        boxShadow: 'white 2px 1px 1px'
-      }}
-    >象</h1>
-    <h3 className="inline">XiangQi with AI</h3>
-  </div>
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import Main from './components/main'
+import AppDrawer from './components/widgets/AppDrawer'
+
+import ChessGame from './components/models/ChessGame'
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    const chessgame = window.chessgame = new ChessGame(this);
+    this.state = { isOpen: true, chessgame }
+  }
+
+  handleToggleDrawer = () => {
+    this.setState({isOpen: !this.state.isOpen});
+  }
+  handleAppUpdate = () => this.forceUpdate()
+
   render() {
+    const { isOpen, chessgame } = this.state
     return (
       <div className="App">
-        <Title />
-        <Main />
+        <AppDrawer
+          className="align-left"
+          onTouchTap={this.handleToggleDrawer}
+          isOpen={isOpen}
+          isToggleable={false}
+          chessgame={chessgame}
+          onAppUpdate={this.handleAppUpdate}
+        />
+        <Main className={`Main ${isOpen ? "is-open" : ""}`} 
+          chessgame={chessgame}
+        />
       </div>
     )
   }

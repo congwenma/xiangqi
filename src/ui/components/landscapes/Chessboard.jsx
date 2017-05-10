@@ -21,7 +21,8 @@ class Chessboard extends React.Component {
 
   render() {
     return (
-      <svg className="chessboard" height={fieldHeight} width={fieldWidth} tabIndex='10' onBlur={this.onBlur.bind(this)}
+      <svg className="chessboard wooden" height={fieldHeight} width={fieldWidth}   
+        tabIndex='10' onBlur={this.onBlur.bind(this)}
       >
         {this.chessgame.grid.render()}
         <River />
