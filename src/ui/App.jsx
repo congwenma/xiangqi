@@ -8,6 +8,7 @@ import Main from './components/main'
 import AppDrawer from './components/widgets/AppDrawer'
 
 import ChessGame from './components/models/ChessGame'
+import DialogModal from './components/widgets/DialogModal'
 
 class App extends Component {
   constructor(props) {
@@ -36,6 +37,7 @@ class App extends Component {
         <Main className={`Main ${isOpen ? "is-open" : ""}`} 
           chessgame={chessgame}
         />
+        <DialogModal />
       </div>
     )
   }

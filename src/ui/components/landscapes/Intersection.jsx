@@ -25,8 +25,6 @@ export default class Intersection extends React.Component{
           stroke={1}
         />
       </g>
-
     );
   }
-
 }

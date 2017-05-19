@@ -115,15 +115,19 @@ export default class ChessGame{
   endGameCondition() {
     var isGameOverConfirmed = true;
     if (this.player1.general.isDeceased()) {
-      isGameOverConfirmed = alert('player 2 wins');
+      window.dialog({
+        mainText: "Player 2 wins",
+        confirmCallback: () => this.reset()
+      })
     }
     else if (this.player2.general.isDeceased()) {
-      isGameOverConfirmed = alert('player 1 wins');
+      window.dialog({
+        mainText: "Player 1 wins",
+        confirmCallback: () => this.reset()
+      })
     }
-    if(!isGameOverConfirmed) {
-      this.reset();
-    } else {
-      this.switchTurn();
+    else {
+      this.switchTurn()
     }
   }
 
