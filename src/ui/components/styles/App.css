@@ -35,9 +35,8 @@ svg.chessboard {
 
 g.frontlines {
   pointer-events: none; }
-
-g.frontlines path {
-  stroke: red; }
+  g.frontlines path {
+    stroke: red; }
 
 text.kaiti, g.kaiti {
   -webkit-user-select: none;
@@ -74,9 +73,8 @@ g.river text {
 
 .Main {
   transition: padding 0.3s ease; }
-
-.Main.is-open {
-  padding-left: 200px; }
+  .Main.is-open {
+    padding-left: 200px; }
 
 .align-left {
   text-align: left; }

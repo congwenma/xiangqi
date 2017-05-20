@@ -4,34 +4,26 @@
   border-radius: 100%;
   position: relative;
   margin: 0 auto; }
-
-.analyze-loader span {
-  display: inline-block;
-  width: 7px;
-  height: 30px;
-  background-color: #c88;
-  margin: 0 1px; }
-
-.analyze-loader.thinking span {
-  background-color: #0097a7; }
-
-.analyze-loader.thinking span:nth-child(1) {
-  animation: grow 1s ease-in-out 0.08333s infinite; }
-
-.analyze-loader.thinking span:nth-child(2) {
-  animation: grow 1s ease-in-out 0.16667s infinite; }
-
-.analyze-loader.thinking span:nth-child(3) {
-  animation: grow 1s ease-in-out 0.25s infinite; }
-
-.analyze-loader.thinking span:nth-child(4) {
-  animation: grow 1s ease-in-out 0.33333s infinite; }
-
-.analyze-loader.thinking span:nth-child(5) {
-  animation: grow 1s ease-in-out 0.41667s infinite; }
-
-.analyze-loader.thinking span:nth-child(6) {
-  animation: grow 1s ease-in-out 0.5s infinite; }
+  .analyze-loader span {
+    display: inline-block;
+    width: 7px;
+    height: 30px;
+    background-color: #c88;
+    margin: 0 1px; }
+  .analyze-loader.thinking span {
+    background-color: #0097a7; }
+  .analyze-loader.thinking span:nth-child(1) {
+    animation: grow 1s ease-in-out 0.08333s infinite; }
+  .analyze-loader.thinking span:nth-child(2) {
+    animation: grow 1s ease-in-out 0.16667s infinite; }
+  .analyze-loader.thinking span:nth-child(3) {
+    animation: grow 1s ease-in-out 0.25s infinite; }
+  .analyze-loader.thinking span:nth-child(4) {
+    animation: grow 1s ease-in-out 0.33333s infinite; }
+  .analyze-loader.thinking span:nth-child(5) {
+    animation: grow 1s ease-in-out 0.41667s infinite; }
+  .analyze-loader.thinking span:nth-child(6) {
+    animation: grow 1s ease-in-out 0.5s infinite; }
 
 @keyframes grow {
   0%, 100% {

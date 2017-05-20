@@ -24,7 +24,12 @@ export default class DialogExampleAlert extends React.Component {
   }
 
   render() {
-    const { cancelText, confirmText, confirmCallback, mainText } = this.state
+    const { 
+      cancelText = 'Cancel', 
+      confirmText = 'Confirm', 
+      confirmCallback = noop, 
+      mainText = 'Are you sure?',
+    } = this.state
     const actions = [
       <FlatButton
         label={cancelText}
@@ -55,10 +60,10 @@ export default class DialogExampleAlert extends React.Component {
 }
 
 window.dialog = ({ 
-  confirmText = 'Confirm', 
-  cancelText = 'Cancel',
-  mainText = 'Are you sure?',
-  confirmCallback = noop,
+  confirmText, 
+  cancelText,
+  mainText,
+  confirmCallback,
 } = {}) => {
   dialogInstance.setState({
     open: true,

@@ -8,8 +8,8 @@ g.intersection {
   &.highlighted {
     cursor: -webkit-grab;
     fill-opacity: 0.5;
-    &.Coordinate_STATE__redHighlighted { fill: $redIntersectionHighlight; }
-    &.Coordinate_STATE__blackHighlighted { fill: $blackIntersectionHighlight; }
+    &.redHighlighted { fill: $redIntersectionHighlight; }
+    &.blackHighlighted { fill: $blackIntersectionHighlight; }
   }
 
   &.highlighted:hover { fill-opacity: 0.7; }
