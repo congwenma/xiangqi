@@ -1,8 +1,8 @@
+// ui 
 import config from '../../../config/chessConfig'
 import matrix from '../coordinateMatrix'
 import tools from 'surgeonkit';
 import avatarsInfo from './avatarsInfo'
-
 
 var {spacing} = config;
 
@@ -60,6 +60,11 @@ class Avatar {
 
 
   set setCoordinate(coord) {
+    // footprint
+    matrix.clearFootprint(this.player.faction)
+    this.coordinate.footprintColor = this.player.faction
+    coord.footprintColor = this.player.faction
+
     this.coordinate.setAvatar = null;
     this.coordinate = coord;
     coord.setAvatar = this;
@@ -69,7 +74,7 @@ class Avatar {
     if ( this.getMoveOptions.indexOf(coord) === -1) {
       throw new Error(`coordinate not found, cant move to this location, ${coord}`);
     }
-
+    
     this.setCoordinate = coord;
     this.unselect();
   }

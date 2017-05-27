@@ -4,7 +4,7 @@ import App from './ui/App';
 
 import 'normalize.css'
 import 'flexboxgrid'
-import 'basscss/css/basscss.css';
+import 'basscss/css/basscss.css'
 
 // material
 import theme from './theme'

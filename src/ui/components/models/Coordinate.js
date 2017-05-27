@@ -1,3 +1,4 @@
+// ui
 import config from '../../config/chessConfig'
 import tools from 'surgeonkit'
 

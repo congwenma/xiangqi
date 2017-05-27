@@ -32,7 +32,7 @@ class Timer extends React.Component {
           backgroundColor={theme.palette.clockCircleColor}
           icon={ <SvgIconWatchLater style={{ width: SIZE, height: SIZE }} /> } 
         />
-        <h3 className="p3 m0" > {this.state.timer} </h3> 
+        <h3 className="p2 m0" > {this.state.timer} </h3> 
       </Chip>
     </div>
   }

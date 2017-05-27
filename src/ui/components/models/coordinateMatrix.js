@@ -1,3 +1,4 @@
+// ui
 import _ from 'lodash'
 import tools from 'surgeonkit'
 import avatarsInfo from './avatars/avatarsInfo'
@@ -35,6 +36,13 @@ Object.assign(Matrix.prototype, {
 
   extinguish: function () {
     return this.all().map(coord => coord.hidden());
+  },
+
+  clearFootprint(faction) {
+    return this.all().map(coord => {
+      if (coord.footprintColor === faction)     
+        coord.footprintColor = undefined
+    })
   },
 
   debug: function () {

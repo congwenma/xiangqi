@@ -13,7 +13,6 @@ export default class Proxmity extends Moveset {
     let restriction = this.avatar.belongsToTopFaction ?
       {x: [3,4,5], y: [0,1,2]} :
       {x: [3,4,5], y: [7,8,9]}
-    debugger
     return [
       matrix.coord(this.x, this.y+1),
       matrix.coord(this.x, this.y-1),

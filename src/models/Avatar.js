@@ -1,3 +1,4 @@
+// ai
 import { AvatarBaseValues, AvatarPositionValues } from '../algorithm/AvatarValues'
 
 // Individual avatars movesets

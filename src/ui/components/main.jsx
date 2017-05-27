@@ -1,5 +1,4 @@
-import 'normalize.css';
-import './styles/App.css';
+import './styles/main.css';
 
 import React from 'react';
 import Chessboard from './landscapes/Chessboard';
@@ -23,7 +22,7 @@ class AppComponent extends React.Component {
   render() {
     return (
       <div className={this.props.className}>
-        <div>
+        <div className="pt3">
           <Chessboard chessgame = {this.props.chessgame} />
         </div>
       </div>

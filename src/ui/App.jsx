@@ -1,9 +1,7 @@
 import './App.css';
-import 'bootstrap-css-only'
 import './components/styles/BootstrapSiteWrapper.css'
 
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import Main from './components/main'
 import AppDrawer from './components/widgets/AppDrawer'
 

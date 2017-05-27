@@ -53,7 +53,7 @@ export default class AppDrawer extends React.Component {
           containerStyle={{zIndex: 0}}
           className="zmin"
         >
-          <div className="p3"></div>
+          <div className="p2"></div>
           <div className="px3"> <Title /> </div>
           <div className="px3 menu" style={{ paddingTop: 30 }}>
             <TogglerCard 
