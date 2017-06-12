@@ -8,13 +8,11 @@
   right: 0;
   width: 398px;
   margin: 0 auto; }
-
-.wave > div {
-  opacity: 1;
-  transition: opacity 2s; }
-
-.wave.opacity0 > div {
-  opacity: 0; }
+  .wave > div {
+    opacity: 1;
+    transition: opacity 2s; }
+  .wave.opacity0 > div {
+    opacity: 0; }
 
 .waves1 {
   position: absolute;
