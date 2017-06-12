@@ -1,8 +1,29 @@
-// http://codepen.io/zmwuqi/pen/BRrvjP
+.wave {
+  position: absolute;
+  width: 496px; 
+  height: 46px; 
+  overflow: hidden;;
+  top: 252px;
+  left: 0;
+  right: 0;
+  width: 398px;
+  margin: 0 auto;
+
+  & > div {
+    opacity: 1;
+    transition: opacity 2s;
+  }
+  &.opacity0 > div {
+    opacity: 0;
+  }
+}
+
 .waves1{
   position: absolute;
+  width: 110%;
+  height: 500px;
   z-index: 50;
-  background-size: 100px 50px;
+  background-size: 40px 20px;
   background-image: 
   radial-gradient(circle at 50% 100%, MintCream 10%, SkyBlue 11%, SkyBlue 23%, MintCream 24%, MintCream 30%, PowderBlue 31%, PowderBlue 43%, MintCream 44%, MintCream 50%, PaleTurquoise 51%, PaleTurquoise 63%, MintCream 64%, MintCream 71%, transparent 71%, transparent);  
   
@@ -14,8 +35,10 @@
 
 .waves2{
   position: absolute;
+  width: 110%;
+  height: 500px;
   z-index: 10;
-  background-size: 100px 50px;
+  background-size: 40px 20px;
   background-image: 
   radial-gradient(circle at 100% 150%, PowderBlue 24%, MintCream 25%, MintCream 28%, LightCyan 29%, LightCyan 36%, MintCream 36%, MintCream 40%, transparent 40%, transparent),
   radial-gradient(circle at 0 150%, PowderBlue 24%, MintCream 25%, MintCream 28%, LightCyan 29%, LightCyan 36%, MintCream 36%, MintCream 40%, transparent 40%, transparent), 
@@ -30,8 +53,10 @@
 
 .waves3{
   position: absolute;
+  width: 110%;
+  height: 500px;
   z-index: 100;
-  background-size: 100px 50px;
+  background-size: 40px 20px;
   background-image: 
   radial-gradient(circle at 100% 150%, PowderBlue 24%, MintCream 25%, MintCream 28%, LightCyan 29%, LightCyan 36%, MintCream 36%, MintCream 40%, transparent 40%, transparent),
   radial-gradient(circle at 0 150%, PowderBlue 24%, MintCream 25%, MintCream 28%, LightCyan 29%, LightCyan 36%, MintCream 36%, MintCream 40%, transparent 40%, transparent);  

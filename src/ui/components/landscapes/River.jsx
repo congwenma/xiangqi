@@ -25,9 +25,9 @@ export default class River extends React.Component{
         transform={boardTranslation}
       >
         <g className="riverContent" transform={riverTranslation}>
-          <rect className="waves1" {...waveDim} style={waveDim}></rect>
+          {/*<rect className="waves1" {...waveDim} style={waveDim}></rect>
           <rect className="waves2" {...waveDim} style={waveDim}></rect>
-          <rect className="waves3" {...waveDim} style={waveDim}></rect>
+          <rect className="waves3" {...waveDim} style={waveDim}></rect>*/}
 
           <rect width={this.width} height={this.height}/>
           <g className="kaiti" transform="rotate(270) translate(-40, 75)">

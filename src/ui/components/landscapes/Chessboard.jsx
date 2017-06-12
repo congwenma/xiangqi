@@ -6,9 +6,9 @@ import Frontlines from './Frontlines'
 import Intersection from './Intersection'
 
 import config from '../../config/chessConfig'
+import './waves.css'
 
 var {fieldHeight, fieldWidth, boardPadding} = config; 
-
 
 class Chessboard extends React.Component {
 
@@ -20,17 +20,33 @@ class Chessboard extends React.Component {
   }
 
   render() {
-    return (
-      <svg className="chessboard wooden" height={fieldHeight} width={fieldWidth}   
-        tabIndex='10' onBlur={this.onBlur.bind(this)}
-      >
-        {this.chessgame.grid.render()}
-        <River />
-        <Frontlines />
+    const { config: { svgAvatar } } = this.chessgame
 
-        {this.renderChesspieces()}
-        {this.renderIntersections()}
-      </svg>
+    return (
+      <div className="relative">
+
+        <div className={`wave ${!svgAvatar && 'opacity0'}`}>
+          <div className="waves1"></div>
+          <div className="waves2"></div>
+          <div className="waves3"></div>
+        </div>        
+      
+        <svg className="chessboard wooden absolute" height={fieldHeight} width={fieldWidth}   
+          tabIndex='10' onBlur={this.onBlur.bind(this)}
+        >
+          {this.chessgame.grid.render()}
+          <River />
+          <Frontlines />
+        </svg>
+
+        <svg className="chessboard absolute"
+        height={fieldHeight} width={fieldWidth}   
+          tabIndex='10' onBlur={this.onBlur.bind(this)}
+          style={{ zIndex: 999 }}>
+          {this.renderChesspieces()}
+          {this.renderIntersections()}
+        </svg>
+      </div>
     );
   }
 

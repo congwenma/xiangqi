@@ -31,16 +31,21 @@ body {
 
 /* Board Related */
 svg.chessboard {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   cursor: default;
   border-radius: 5px;
   box-shadow: black 3px 3px 3px 0px; }
-  svg.chessboard:focus {
-    outline: none; }
+
+svg.chessboard:focus {
+  outline: none; }
 
 g.frontlines {
   pointer-events: none; }
-  g.frontlines path {
-    stroke: red; }
+
+g.frontlines path {
+  stroke: red; }
 
 text.kaiti, g.kaiti {
   -webkit-user-select: none;
@@ -77,8 +82,9 @@ g.river text {
 
 .Main {
   transition: padding 0.3s ease; }
-  .Main.is-open {
-    padding-left: 200px; }
+
+.Main.is-open {
+  padding-left: 256px; }
 
 .align-left {
   text-align: left; }

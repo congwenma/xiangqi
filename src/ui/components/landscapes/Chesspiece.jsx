@@ -40,13 +40,13 @@ class ChessPiece extends React.Component {
           r="15"
         />
 
-        {     !window.chessgame.config.svgAvatar &&
+        {!window.chessgame.config.svgAvatar &&
           <text x={this.props.avatar.location.cx-10} y={this.props.avatar.location.cy+7}>
             {this.props.avatar.getName}
           </text>
         }
 
-        {     window.chessgame.config.svgAvatar &&
+        {window.chessgame.config.svgAvatar &&
           <image
             x={this.props.avatar.location.cx-15}
             y={this.props.avatar.location.cy-15}

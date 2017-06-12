@@ -106,7 +106,7 @@ export default class ChessGame{
 
   selectMove(coord) {
     if (coord.isHidden()) {
-      throw new Error('coord is not highlighted, unable to move');
+      return console.error('coord is not highlighted, unable to move');
     }
     this.activePlayer.getSelectedAvatar.moveTo(coord);
     this.switchTurn();
@@ -136,6 +136,8 @@ export default class ChessGame{
       avatar.coordinate.avatar = null;
       avatar.coordinate = null;
     });
+
+    this.coordinates.clearAllFootprint()
 
     this.activePlayer = this.player1
     this.player1.avatars = [];

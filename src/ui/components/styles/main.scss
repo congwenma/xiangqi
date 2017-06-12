@@ -25,6 +25,10 @@ body {
 /* Board Related */
 svg.chessboard {
   // border: 1px solid #555;
+
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   cursor: default;
   border-radius: 5px;
   box-shadow: black 3px 3px 3px 0px;
@@ -81,7 +85,7 @@ g.river{
 .Main {
   transition: padding 0.3s ease;
   &.is-open {
-    padding-left: 200px;
+    padding-left: 256px;
   }
 
 }

@@ -47,6 +47,13 @@ Object.assign(Matrix.prototype, {
         coord.footprintColor = undefined
     })
   },
+  
+  // currently used in Chessgame#reset
+  clearAllFootprint() {
+    this.all().map(
+      coord => coord.footprintColor = undefined
+    )
+  },
 
   debug: function () {
     return tools.expand(10).map((rowNum) => {
