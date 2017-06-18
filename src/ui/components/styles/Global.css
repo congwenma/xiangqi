@@ -1,6 +1,11 @@
+@charset "UTF-8";
 /* Mixins */
+@font-face {
+  font-family: 'zhuanti';
+  src: url("./fonts/白舟篆書.ttf"); }
+
 .kaiti {
-  font-family: KaiTi, FangSong, SimHei, SimSun; }
+  font-family: 'zhuanti', KaiTi, FangSong, SimHei, SimSun; }
 
 .inline {
   display: inline-block; }

@@ -33,41 +33,41 @@ const Title = () =>
 
 export default class AppDrawer extends React.Component {
   render() {
-    const { 
+    const {
       onTouchTap, isOpen, className, isToggleable, chessgame, onAppUpdate
     } = this.props
     const { faction: playerFaction } = this.props.chessgame.activePlayer;
     const { primary1Color, accent1Color } = theme.palette
-    
+
     return (
       <div className={className}>
         { isToggleable &&
-          <RaisedButton label={<DehazeIcon />}  
-            onTouchTap={isToggleable && onTouchTap} 
+          <RaisedButton label={<DehazeIcon />}
+            onTouchTap={isToggleable && onTouchTap}
             className="zmid"
             style={{ marginLeft: 160 }}
           />
         }
 
-        <Drawer open={isOpen} 
+        <Drawer open={isOpen}
           containerStyle={{zIndex: 0}}
           className="zmin"
         >
           <div className="p2"></div>
           <div className="px3"> <Title /> </div>
           <div className="px3 menu" style={{ paddingTop: 30 }}>
-            <TogglerCard 
-              callback={onAppUpdate} 
+            <TogglerCard
+              callback={onAppUpdate}
               model={this.props.chessgame.config}
               attr='svgAvatar'
             />
             <Card className="center my3"
               style={{ background: theme.palette.clockCircleColor }}
             >
-              <CardHeader title="Turn of" 
-                textStyle={{ paddingRight: 0 }} 
+              <CardHeader title="Turn of"
+                textStyle={{ paddingRight: 0 }}
                 style={{
-                  background: theme.palette.clockCircleColor 
+                  background: theme.palette.clockCircleColor
                 }}
               />
               <CardText className="mx-auto">
@@ -81,7 +81,7 @@ export default class AppDrawer extends React.Component {
 
             <Timer stat={this.props.chessgame.stat} className="pb3"/>
             <div className="pt1">
-              <RaisedButton 
+              <RaisedButton
                 primary={true}
                 fullWidth
                 onClick={(...args) => this.props.chessgame.reset(...args)}

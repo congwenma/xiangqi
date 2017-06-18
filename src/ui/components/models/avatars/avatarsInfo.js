@@ -1,7 +1,10 @@
 let info = {
   red: {
-    Chariot:  '车',
-    Knight:   '马',
+    // converting to zhuanti missing unicode for these two
+    // Chariot:  '车',
+    // Knight:   '马',
+    Chariot:  '車',
+    Knight:   '馬',
     Minister: '相',
     Guard:    '士',
     General:  '帥',

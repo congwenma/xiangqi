@@ -19,6 +19,7 @@ g.chess-piece {
   &.black {
     fill: $black;
     stroke: white;
+    stroke-width: 0.8px;
     text {
       stroke: $blackText;
     }

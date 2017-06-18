@@ -7,7 +7,7 @@ let {boardPadding, spacing} = config;
 export default class River extends React.Component{
   constructor() {
     super();
-    
+
     this.boardPadding = boardPadding;
     this.riverPadding = spacing * 4;
     this.width = spacing * 8;
@@ -37,7 +37,7 @@ export default class River extends React.Component{
             <text> 河 </text>
           </g>
           <g className="kaiti" transform="rotate(90) translate(10, -325)">
-            <text> 汉 </text>
+            <text> 漢 </text>
           </g>
           <g className="kaiti" transform="rotate(90) translate(10, -250)">
             <text> 界 </text>

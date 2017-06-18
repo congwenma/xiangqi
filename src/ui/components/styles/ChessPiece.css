@@ -1,6 +1,11 @@
+@charset "UTF-8";
 /* Mixins */
+@font-face {
+  font-family: 'zhuanti';
+  src: url("./fonts/白舟篆書.ttf"); }
+
 .kaiti, g.chess-piece text {
-  font-family: KaiTi, FangSong, SimHei, SimSun; }
+  font-family: 'zhuanti', KaiTi, FangSong, SimHei, SimSun; }
 
 .inline {
   display: inline-block; }
@@ -26,7 +31,8 @@ g.chess-piece {
         stroke-width: 2; }
   g.chess-piece.black {
     fill: #222;
-    stroke: white; }
+    stroke: white;
+    stroke-width: 0.8px; }
     g.chess-piece.black text {
       stroke: white; }
     g.chess-piece.black.selected {

@@ -1,6 +1,11 @@
+@charset "UTF-8";
 /* Mixins */
+@font-face {
+  font-family: 'zhuanti';
+  src: url("./fonts/白舟篆書.ttf"); }
+
 .kaiti, text.kaiti, g.kaiti {
-  font-family: KaiTi, FangSong, SimHei, SimSun; }
+  font-family: 'zhuanti', KaiTi, FangSong, SimHei, SimSun; }
 
 .inline {
   display: inline-block; }
@@ -37,13 +42,15 @@ svg.chessboard {
   cursor: default;
   border-radius: 5px;
   box-shadow: black 3px 3px 3px 0px; }
-  svg.chessboard:focus {
-    outline: none; }
+
+svg.chessboard:focus {
+  outline: none; }
 
 g.frontlines {
   pointer-events: none; }
-  g.frontlines path {
-    stroke: red; }
+
+g.frontlines path {
+  stroke: red; }
 
 text.kaiti, g.kaiti {
   -webkit-user-select: none;
@@ -80,8 +87,9 @@ g.river text {
 
 .Main {
   transition: padding 0.3s ease; }
-  .Main.is-open {
-    padding-left: 256px; }
+
+.Main.is-open {
+  padding-left: 256px; }
 
 .align-left {
   text-align: left; }

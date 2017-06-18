@@ -4,9 +4,21 @@
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+ */
 }
+@font-face{
+  font-family: 'zhuanti';
+  src: url("./fonts/白舟篆書.ttf");
+  // src: url("./fonts/小钻字库-sw.ttf"); // maybe
+  // src: url("./fonts/方正小篆体.ttf"); // weird
+  // src: url("./fonts/白舟篆古印.ttf"); // similar
+  // src: url("./fonts/经典繁方篆.ttf");
+  // src: url("./fonts/王汉宗印篆体繁.ttf");
+  // src: url("./fonts/北师大说文小篆.ttf");
+  // src: url("./fonts/超世纪粗印篆.ttf");
+  // src: url("./fonts/超世纪细印篆.ttf");
+}
 
 .kaiti {
-  font-family: KaiTi, FangSong, SimHei, SimSun;
+  font-family: 'zhuanti', KaiTi, FangSong, SimHei, SimSun;
 }
 
 $red: red;
