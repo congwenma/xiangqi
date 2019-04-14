@@ -4,7 +4,7 @@ Xiang Qi (Chinese Chess) is one of the most popular strategy board game in China
 
 For a preview: [https://xiangqi-19724.herokuapp.com/](https://xiangqi-19724.herokuapp.com/)
 
-The application is assembled in [Webpack](https://webpack.github.io/), a web module bundler that runs on [NodeJS](https://nodejs.org/en/).
+The application is assembled in [Webpack](https://webpack.github.io/)
 
 > npm run start
 
